@@ -1,0 +1,411 @@
+/* Team Gallery Section */
+.team-gallery {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 100vh;
+}
+
+.team-gallery_container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section_header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section_header h4 {
+    color: var(--color-primary, #0ea5e9);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.section_header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.section_description {
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Team Grid - 6 column system for flexible layout */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Principal and Instructor cards span 3 columns each (2 cards in first row) */
+.principal-card,
+.instructor-card {
+    grid-column: span 3;
+}
+
+/* Student cards span 2 columns each (3 cards in second row) */
+.student-card {
+    grid-column: span 2;
+}
+
+/* Team Cards */
+.team-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    animation: fadeInUp 0.6s ease forwards;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.team-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.team-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.team-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.team-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.team-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.team-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Principal Card Special Styling */
+.principal-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.principal-card .card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.principal-card .team-name,
+.principal-card .team-role,
+.principal-card .team-description {
+    color: white;
+}
+
+/* Instructor Card Special Styling */
+.instructor-card {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.instructor-card .card-content {
+    flex-grow: 1;
+}
+
+.instructor-card .team-name,
+.instructor-card .team-role,
+.instructor-card .team-description {
+    color: white;
+}
+
+/* Card Image Container */
+.card-image-container {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform 0.6s ease;
+    display: block;
+}
+
+/* Ensure faces are fully visible for principal & instructor */
+.principal-card .team-photo,
+.instructor-card .team-photo {
+    object-position: top center;
+}
+
+.team-card:hover .team-photo {
+    transform: scale(1.1);
+}
+
+/* Card Overlay */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.7) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.team-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: white;
+    font-weight: 600;
+}
+
+.overlay-content i {
+    font-size: 1.5rem;
+}
+
+/* Card Content */
+.card-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.team-role {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary, #0ea5e9);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.team-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.principal-card .team-role {
+    color: #fbbf24;
+}
+
+.instructor-card .team-role {
+    color: #fde047;
+}
+
+/* Student Card Special Effects */
+.student-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #10b981, #3b82f6, #8b5cf6);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    /* Reset all cards to span 1 column on tablet */
+    .principal-card,
+    .instructor-card,
+    .student-card {
+        grid-column: span 1;
+    }
+
+    .card-image-container {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .team-gallery {
+        padding: 4rem 0 3rem;
+    }
+
+    .team-gallery_container {
+        padding: 0 1rem;
+    }
+
+    .section_header h2 {
+        font-size: 2rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Reset all cards to span 1 column on mobile */
+    .principal-card,
+    .instructor-card,
+    .student-card {
+        grid-column: span 1;
+    }
+
+    .card-image-container {
+        height: 350px;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .team-name {
+        font-size: 1.3rem;
+    }
+
+    .team-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section_header h4 {
+        font-size: 1rem;
+    }
+
+    .section_header h2 {
+        font-size: 1.8rem;
+    }
+
+    .section_description {
+        font-size: 1rem;
+    }
+
+    .card-image-container {
+        height: 300px;
+    }
+
+    .card-content {
+        padding: 1.2rem;
+    }
+
+    .overlay-content {
+        padding: 1rem;
+    }
+}
+
+/* Dark Mode Support */
+body.dark .team-gallery {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+body.dark .team-card {
+    background: #334155;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .team-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .team-name {
+    color: #f1f5f9;
+}
+
+body.dark .team-description {
+    color: #cbd5e1;
+}
+
+body.dark .section_header h2 {
+    color: #f1f5f9;
+}
+
+body.dark .section_description {
+    color: #94a3b8;
+}
+
+/* Premium Hover Effects */
+.team-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.team-card:hover::after {
+    opacity: 1;
+}
+
+/* Focus States for Accessibility */
+.team-card:focus-within {
+    outline: 3px solid var(--color-primary, #0ea5e9);
+    outline-offset: 2px;
+}

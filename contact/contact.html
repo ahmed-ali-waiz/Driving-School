@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Ahmad Driving School</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav_container">
+            <a href="../index.html" class="nav_logo">Ahmad</a>
+            <div class="nav_content">
+                <menu class="nav_menu">
+                    <a href="../index.html">Home</a>
+                    <a href="../about/about.html">About</a>
+                    <a href="contact.html" class="active">Contact</a>
+                    <a href="../faqs/faqs.html">FAQS</a>
+                    <a href="../gallery/gallery.html">Gallery</a>
+                    <a href="../programs/programs.html">Programs</a>
+                </menu>
+                <button class="nav_menu-open"><i class="uil uil-bars"></i></button>
+                <button class="nav_menu-close"><i class="uil uil-multiply"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact">
+        <div class="container contact_container">
+            <article class="contact_info">
+                <header class="section_header">
+                    <h4>Get In Touch</h4>
+                    <h2>Contact Ahmad Driving School</h2>
+                </header>
+                <p>
+                    Have questions about our programs, pricing, or schedules? Send us a message and we’ll get back to
+                    you as soon as possible.
+                </p>
+                <ul class="contact_details">
+                    <li><i class="uil uil-phone"></i> +92-300-0000000</li>
+                    <li><i class="uil uil-envelope"></i> info@ahmaddrivingschool.com</li>
+                    <li><i class="uil uil-map-marker"></i> Main Road, Your City, Pakistan</li>
+                </ul>
+            </article>
+
+            <form class="contact_form">
+                <div class="form_group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form_group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form_group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="03XX-XXXXXXX" required>
+                </div>
+                <div class="form_group">
+                    <label for="program">Program</label>
+                    <select id="program" name="program">
+                        <option value="" selected>Select a program</option>
+                        <option value="beginner">Beginner Course</option>
+                        <option value="refresher">Refresher Lessons</option>
+                        <option value="test-prep">License Test Preparation</option>
+                    </select>
+                </div>
+                <div class="form_group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here"></textarea>
+                </div>
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+        </div>
+</section>
+
+<script src="../main.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+/* Contact Section */
+.contact {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(var(--color-gray-0), var(--color-gray-50));
+}
+
+.contact_container {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: start;
+    margin-inline: auto;
+}
+
+/* Contact Info */
+.contact_info .section_header {
+    text-align: left;
+}
+
+.contact_info h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.3rem;
+}
+
+.contact_info h2 {
+    margin-bottom: 1rem;
+}
+
+.contact_info>p {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+/* Contact Details */
+.contact_details {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.contact_details li {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.4rem 1.6rem;
+    min-height: 4.2rem;
+    background: var(--color-gray-0);
+    border-radius: var(--radius-2);
+    box-shadow: 0 0.5rem 0 var(--color-gray-200);
+    border: 1px solid var(--color-gray-200);
+    border-left: 4px solid var(--color-primary);
+    transition: var(--transition);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.contact_details li:hover {
+    transform: translateX(0.5rem);
+    box-shadow: 0 0.8rem 1rem rgba(2, 161, 223, 0.1);
+}
+
+.contact_details i {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    background: rgba(2, 161, 223, 0.1);
+    width: 3rem;
+    height: 3rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.contact_details li:nth-child(2) i {
+    color: var(--color-success);
+    background: rgba(6, 196, 196, 0.1);
+}
+
+.contact_details li:nth-child(2) {
+    border-left-color: var(--color-success);
+}
+
+.contact_details li:nth-child(3) i {
+    color: var(--color-danger);
+    background: rgba(199, 33, 86, 0.1);
+}
+
+.contact_details li:nth-child(3) {
+    border-left-color: var(--color-danger);
+}
+
+/* Contact Form */
+.contact_form {
+    background: var(--color-gray-0);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-4);
+    box-shadow: 0 1rem 0 var(--color-gray-200);
+    border-top: 4px solid var(--color-primary);
+}
+
+/* Form Groups */
+.form_group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form_group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-gray-700);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.form_group input,
+.form_group select,
+.form_group textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    background: var(--color-gray-50);
+    border: 2px solid var(--color-gray-200);
+    border-radius: var(--radius-2);
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--color-gray-900);
+    transition: var(--transition);
+}
+
+.form_group input:focus,
+.form_group select:focus,
+.form_group textarea:focus {
+    border-color: var(--color-primary);
+    background: var(--color-gray-0);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(2, 161, 223, 0.1);
+}
+
+.form_group input::placeholder,
+.form_group textarea::placeholder {
+    color: var(--color-gray-400);
+}
+
+.form_group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Select Arrow */
+.form_group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%233f4d5c' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+/* Submit Button */
+.contact_form .btn {
+    width: 100%;
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    padding: 1.2rem 2.5rem;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+}
+
+.contact_form .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.8rem 1.5rem rgba(2, 161, 223, 0.2);
+}
+
+/* Input Validation Styles */
+.form_group input:valid,
+.form_group textarea:valid,
+.form_group select:valid {
+    border-color: var(--color-success);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .contact_container {
+        gap: 2.5rem;
+    }
+
+    .contact_details {
+        gap: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact {
+        padding: 4rem 0 3rem;
+    }
+
+    .contact_container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact_info .section_header {
+        text-align: center;
+    }
+
+    .contact_info>p {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    .contact_form {
+        padding: 2rem 1.5rem;
+    }
+
+    .contact_details {
+        gap: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .form_group input,
+    .form_group select,
+    .form_group textarea {
+        padding: 1.1rem 1.2rem;
+        /* Larger touch target */
+        font-size: 16px;
+        /* Prevent zoom on iOS */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact_details li {
+        font-size: 0.9rem;
+        padding: 1.2rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+    }
+
+    .contact_details i {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
+    }
+
+    .contact_form .btn {
+        padding: 1.4rem 2rem;
+    }
+}
+
+/* Dark Mode */
+body.dark .contact_form,
+body.dark .contact_details li {
+    background: var(--color-gray-800);
+    box-shadow: 0 1rem 0 var(--color-gray-900);
+}
+
+body.dark .form_group input,
+body.dark .form_group select,
+body.dark .form_group textarea {
+    background: var(--color-gray-700);
+    border-color: var(--color-gray-600);
+    color: var(--color-gray-0);
+}
+
+body.dark .form_group input:focus,
+body.dark .form_group select:focus,
+body.dark .form_group textarea:focus {
+    background: var(--color-gray-800);
+}
