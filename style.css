@@ -332,23 +332,7 @@ nav a.active {
     color: var(--color-primary-variant);
 }
 
-.theme_btn {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.4rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    transition: var(--transition);
-}
-
-.theme_btn:hover {
-    color: var(--color-primary-variant);
-    background: rgba(255, 255, 255, 0.2);
-    transform: rotate(20deg);
-}
+/* Removed .theme_btn styles */
 
 /* Responsive containers */
 @media screen and (max-width: 1200px) {
